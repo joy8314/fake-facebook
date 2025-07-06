@@ -2,118 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Jobayer Login</title>
+  <title>Facebook Login</title>
   <style>
     body {
-      background-color: #f0f2f5;
+      background-color: #ffffff; /* Sada background */
       font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       margin: 0;
-      padding: 0;
     }
-
-    .header {
-      background-color: #0866ff;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-      font-size: 36px;
-      font-weight: bold;
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .header svg {
-      width: 32px;
-      height: 32px;
-      fill: white;
-    }
-
     .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 60px;
+      background-color: #c9d2db;
+      padding: 30px 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 300px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
-
-    .login-box {
-      background: white;
-      padding: 30px;
-      width: 360px;
-      border-radius: 8px;
-      box-shadow: 0px 0px 10px #ccc;
+    .logo {
+      width: 60px;
+      margin-bottom: 20px;
     }
-
-    .login-box input {
+    input {
       width: 100%;
-      padding: 14px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 16px;
-    }
-
-    .login-btn {
-      background-color: #0866ff;
-      color: white;
-      font-weight: bold;
-      padding: 14px;
-      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
       border: none;
       border-radius: 6px;
+      box-sizing: border-box;
       font-size: 16px;
-      cursor: pointer;
+    }
+    .login-btn {
+      width: 100%;
+      background-color: #1877F2;
+      color: white;
+      padding: 12px;
       margin-top: 10px;
+      border: none;
+      border-radius: 25px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
     }
-
     .login-btn:hover {
-      background-color: #0654d1;
+      background-color: #166FE5;
     }
-
-    .footer {
-      margin-top: 40px;
-      text-align: center;
-      color: #888;
+    .link {
+      display: block;
+      margin-top: 10px;
+      color: #B0B3B8;
+      text-decoration: none;
       font-size: 14px;
+    }
+    .create-btn {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: transparent;
+      border: 1px solid #3A3B3C;
+      color: #2E89FF;
+      border-radius: 25px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .create-btn:hover {
+      background-color: #ccced1;
+    }
+    .meta {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #B0B3B8;
     }
   </style>
 </head>
 <body>
-
-  <div class="header">
-    <!-- Facebook style logo (SVG) -->
-    <svg viewBox="0 0 24 24">
-      <path d="M22.675 0h-21.35C.597 0 0 .592 0 1.323v21.353C0 23.407.597 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.796.143v3.24l-1.918.001c-1.504 0-1.796.716-1.796 1.766v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.403 24 24 23.407 24 22.676V1.323C24 .592 23.403 0 22.675 0z"/>
-    </svg>
-    Jobayer
-  </div>
-
   <div class="container">
-    <div class="login-box">
-      <input type="text" id="email" placeholder="Email or Phone">
-      <input type="password" id="pass" placeholder="Password">
-      <button class="login-btn" onclick="handleLogin()">Log In</button>
-    </div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" class="logo">
+    <input type="text" placeholder="Mobile number or email">
+    <input type="password" placeholder="Password">
+    <button class="login-btn">Log in</button>
+    <a href="#" class="link">Forgot password?</a>
+    <button class="create-btn">Create new account</button>
+    <div class="meta">Meta</div>
   </div>
-
-  <div class="footer">© 2025 Jobayer. This is a demo clone UI only.</div>
-
-  <script>
-    function handleLogin() {
-      const email = document.getElementById("email").value;
-      const pass = document.getElementById("pass").value;
-
-      if (!email || !pass) {
-        alert("Please fill in both fields.");
-        return;
-      }
-
-      alert("Welcome " + email + "! This is a demo only.");
-      console.log("Demo input:", { email, pass });
-    }
-  </script>
-
 </body>
 </html>
