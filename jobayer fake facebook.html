@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jobayer Login</title>
+  <style>
+    body {
+      background-color: #f0f2f5;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #0866ff;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 60px;
+    }
+
+    .login-box {
+      background: white;
+      padding: 30px;
+      width: 360px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px #ccc;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .login-btn {
+      background-color: #0866ff;
+      color: white;
+      font-weight: bold;
+      padding: 14px;
+      width: 100%;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .login-btn:hover {
+      background-color: #0654d1;
+    }
+
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #888;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <!-- Facebook style logo (SVG) -->
+    <svg viewBox="0 0 24 24">
+      <path d="M22.675 0h-21.35C.597 0 0 .592 0 1.323v21.353C0 23.407.597 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.796.143v3.24l-1.918.001c-1.504 0-1.796.716-1.796 1.766v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.403 24 24 23.407 24 22.676V1.323C24 .592 23.403 0 22.675 0z"/>
+    </svg>
+    Jobayer
+  </div>
+
+  <div class="container">
+    <div class="login-box">
+      <input type="text" id="email" placeholder="Email or Phone">
+      <input type="password" id="pass" placeholder="Password">
+      <button class="login-btn" onclick="handleLogin()">Log In</button>
+    </div>
+  </div>
+
+  <div class="footer">© 2025 Jobayer. This is a demo clone UI only.</div>
+
+  <script>
+    function handleLogin() {
+      const email = document.getElementById("email").value;
+      const pass = document.getElementById("pass").value;
+
+      if (!email || !pass) {
+        alert("Please fill in both fields.");
+        return;
+      }
+
+      alert("Welcome " + email + "! This is a demo only.");
+      console.log("Demo input:", { email, pass });
+    }
+  </script>
+
+</body>
+</html>
